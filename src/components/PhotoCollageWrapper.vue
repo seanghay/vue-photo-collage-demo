@@ -61,6 +61,7 @@ export default {
       type: Boolean,
       default: false,
     },
+    gapSize: String,
   },
   data() {
     const layout = this.layout;
@@ -86,9 +87,22 @@ export default {
         this.allowRender = !Object.keys(this.layoutPhotoMaps).length;
       },
     },
+    gapSize: {
+      handler() {
+        this.setGapSize();
+      },
+      deep: true,
+    }
   },
   created() {
     this.layoutPhotoMaps = createLayoutPhotoMaps(this.layout, this.photos);
+        this.setGapSize();
+
+  },
+  methods: {
+    setGapSize() {
+        document.documentElement.style.setProperty('--vue-photo-grid-gap', this.gapSize);
+    }
   },
   computed: {
     layoutNum() {

@@ -14,13 +14,12 @@ export default {
 
 <style lang="scss" scoped>
 .vue-photo-row {
-  
+
   display: flex;
-  border: 1px solid #ddd;
   box-sizing: border-box;
 
   & + & {
-    margin-top: 2px;
+    margin-top: var(--vue-photo-grid-gap);
   }
 
 }

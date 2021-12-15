@@ -1,6 +1,7 @@
 <template>
   <div>
     <photo-collage-wrapper 
+    gapSize="6px"
     @itemClick="itemClickHandler"
     v-bind="collage"> </photo-collage-wrapper>
   </div>
@@ -23,9 +24,9 @@ export default {
   data() {
     return {
       collage: {
-        width: "512px",
-        height: ["256px", "256px"],
-        layout: [3, 2],
+        width: "1200px",
+        height: ["400px", "400px"],
+        layout: [2, 3],
         photos: [
           {
             source:
@@ -68,4 +69,5 @@ export default {
   margin: 0;
   padding: 0;
 }
+
 </style>

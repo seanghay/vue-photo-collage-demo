@@ -1,5 +1,8 @@
 <template>
-  <div class="vue-photo-grid" @click="$emit('click')">
+  <div 
+    class="vue-photo-grid" 
+    @click="$emit('click')">
+
     <slot></slot>
   </div>
 </template>
@@ -11,7 +14,7 @@
   flex: 1;
   cursor: pointer;
   & + & {
-    margin-left: 2px;
+    margin-left: var(--vue-photo-grid-gap);
   }
 }
 </style>
