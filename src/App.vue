@@ -1,32 +1,30 @@
 <template>
-  <div>
-    <photo-collage-wrapper 
-    gapSize="6px"
+  <div style="margin: 1em">
+    <photo-collage-wrapper     
     @itemClick="itemClickHandler"
     v-bind="collage"> </photo-collage-wrapper>
   </div>
 </template>
 
 <script>
-import PhotoCollageWrapper from "./components/PhotoCollageWrapper.vue";
+import { PhotoCollageWrapper  } from 'vue-photo-collage';
+
 export default {
   components: {
     PhotoCollageWrapper,
   },
   methods: {
     itemClickHandler(data, i) {
-      
       const d = Object.assign({}, data);
       console.log('clicked: ', JSON.stringify(d, null, 2))
-
     }
   },
   data() {
     return {
       collage: {
-        width: "1200px",
+        width: "800px",
         height: ["400px", "400px"],
-        layout: [2, 3],
+        layout: [2, 2],
         photos: [
           {
             source:
